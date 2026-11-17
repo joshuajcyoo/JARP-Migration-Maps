@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_402c5819164c985e8a0aea3986c23b10 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_402c5819164c985e8a0aea3986c23b10" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_402c5819164c985e8a0aea3986c23b10 = L.map(
+                "map_402c5819164c985e8a0aea3986c23b10",
+                {
+                    center: [35.0, 180.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 3,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_84ea2b6bd0837af98db8fa32e19ae6cd = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Esri, HERE, Garmin, (c) OpenStreetMap contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_84ea2b6bd0837af98db8fa32e19ae6cd.addTo(map_402c5819164c985e8a0aea3986c23b10);
+        
+    
+            var tile_layer_1099b4049d1c5bc413ea62661f44df44 = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Esri",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_1099b4049d1c5bc413ea62661f44df44.addTo(map_402c5819164c985e8a0aea3986c23b10);
+        
+    
+            var layer_control_9cfc126a9c9a1157d121d114a891cdaf_layers = {
+                base_layers : {
+                    "Esri Light Gray" : tile_layer_84ea2b6bd0837af98db8fa32e19ae6cd,
+                    "Esri Street Map" : tile_layer_1099b4049d1c5bc413ea62661f44df44,
+                },
+                overlays :  {
+                },
+            };
+            let layer_control_9cfc126a9c9a1157d121d114a891cdaf = L.control.layers(
+                layer_control_9cfc126a9c9a1157d121d114a891cdaf_layers.base_layers,
+                layer_control_9cfc126a9c9a1157d121d114a891cdaf_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_402c5819164c985e8a0aea3986c23b10);
+
+        
+    
+            var poly_line_045b9d16c71e365f7588916c348d6ad1 = L.polyline(
+                [[35.42808434, 133.33097797], [36.842530334956656, 136.80893603766665], [38.18741716856, 140.28689410533335], [39.46274484081, 143.764852173], [40.668513351706665, 147.24281024066667], [41.80472270125, 150.72076830833333], [42.87137288944, 154.19872637600002], [43.86846391627666, 157.67668444366666], [44.79599578176, 161.15464251133335], [45.65396848588999, 164.63260057899998], [46.44238202866667, 168.11055864666668], [47.16123641008999, 171.58851671433328], [47.81053163016, 175.066474782], [48.39026768887666, 178.54443284966666], [48.90044458624, 182.02239091733333], [49.341062322249996, 185.500348985], [49.71212089690666, 188.97830705266665], [50.013620310209994, 192.4562651203333], [50.245560562159994, 195.93422318799998], [50.40794165275666, 199.41218125566667], [50.500763582, 202.89013932333333], [50.52402634988999, 206.368097391], [50.477729956426664, 209.84605545866663], [50.361874401609995, 213.32401352633332], [50.17645968544, 216.801971594], [49.92148580791667, 220.27992966166664], [49.59695276904, 223.75788772933333], [49.202860568809996, 227.23584579699997], [48.739209207226665, 230.71380386466666], [48.205998684289995, 234.1917619323333], [47.603229, 237.66971999999998], [47.47601130066666, 238.01779126666665], [47.341832176000004, 238.36586253333334], [47.200691626, 238.7139338], [47.05258965066667, 239.0620050666667], [46.897526250000006, 239.41007633333334], [46.735501424000006, 239.75814760000003], [46.566515172666655, 240.10621886666664], [46.390567496, 240.45429013333336], [46.20765839399999, 240.80236139999997], [46.017787866666666, 241.1504326666667], [45.820955913999995, 241.4985039333333], [45.617162535999995, 241.84657519999996], [45.406407732666665, 242.19464646666665], [45.188691504000005, 242.5427177333333], [44.96401384999999, 242.89078899999998], [44.73237477066667, 243.23886026666665], [44.493774265999996, 243.5869315333333], [44.248212335999995, 243.93500279999998], [43.995688980666664, 244.28307406666664], [43.7362042, 244.63114533333334], [43.46975799399999, 244.97921659999997], [43.196350362666664, 245.32728786666667], [42.915981306, 245.67535913333333], [42.628650824, 246.0234304], [42.33435891666666, 246.3715016666667], [42.033105584, 246.71957293333332], [41.724890826, 247.06764419999996], [41.409714642666664, 247.41571546666665], [41.08757703399999, 247.7637867333333], [40.758478, 248.11185799999998]],
+                {"bubblingMouseEvents": true, "color": "#1f77b4", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#1f77b4", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_402c5819164c985e8a0aea3986c23b10);
+        
+    
+            poly_line_045b9d16c71e365f7588916c348d6ad1.bindTooltip(
+                `<div>
+                     <b>ADACHI, Terry Terumasa</b><br>Yonago-shi, Tottori Prefecture &rarr; Seattle, WA &rarr; Salt Lake City, UT
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_623c3de69f37bca3ed1e6baea566c9bf = L.circleMarker(
+                [35.42808434, 133.33097797],
+                {"bubblingMouseEvents": true, "color": "#1f77b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1f77b4", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_402c5819164c985e8a0aea3986c23b10);
+        
+    
+            circle_marker_623c3de69f37bca3ed1e6baea566c9bf.bindTooltip(
+                `<div>
+                     Start: Yonago-shi, Tottori Prefecture
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d3829ebe45762619cf7809c248e30edc = L.circleMarker(
+                [47.603229, 237.66971999999998],
+                {"bubblingMouseEvents": true, "color": "#1f77b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1f77b4", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_402c5819164c985e8a0aea3986c23b10);
+        
+    
+            circle_marker_d3829ebe45762619cf7809c248e30edc.bindTooltip(
+                `<div>
+                     Stage 1: Seattle, WA
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e2fa299ce5c54442582496922b0cb97d = L.circleMarker(
+                [40.758478, 248.11185799999998],
+                {"bubblingMouseEvents": true, "color": "#1f77b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_402c5819164c985e8a0aea3986c23b10);
+        
+    
+            circle_marker_e2fa299ce5c54442582496922b0cb97d.bindTooltip(
+                `<div>
+                     End: Salt Lake City, UT
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_2bfea2e8b3e30a87fd6a919e15ac615e = L.polyline(
+                [[26.32244545, 127.75057298], [25.436245667806666, 130.23028194733334], [24.599640064960006, 132.7099909146667], [23.812628641459998, 135.189699882], [23.07521139730667, 137.66940884933334], [22.387388332500002, 140.14911781666666], [21.749159447040004, 142.62882678400004], [21.160524740926665, 145.10853575133333], [20.621484214160006, 147.5882447186667], [20.13203786674, 150.067953686], [19.69218569866667, 152.54766265333336], [19.30192770994, 155.02737162066666], [18.961263900560002, 157.507080588], [18.670194270526668, 159.98678955533333], [18.42871881984, 162.46649852266668], [18.236837548500002, 164.94620749], [18.09455045650667, 167.42591645733336], [18.00185754386, 169.90562542466665], [17.95875881056, 172.385334392], [17.96525425660667, 174.86504335933333], [18.021343882000004, 177.34475232666668], [18.12702768674, 179.824461294], [18.28230567082667, 182.30417026133333], [18.487177834260002, 184.78387922866668], [18.741644177040005, 187.263588196], [19.04570469916667, 189.74329716333335], [19.39935940064, 192.22300613066668], [19.802608281460003, 194.702715098], [20.25545134162667, 197.18242406533332], [20.757888581139998, 199.66213303266665], [21.30992, 202.141842], [21.312984717333332, 202.1382249333333], [21.316121776000003, 202.13460786666667], [21.319331176000002, 202.13099080000003], [21.322612917333338, 202.12737373333334], [21.325967000000006, 202.12375666666668], [21.329393424000006, 202.12013960000002], [21.332892189333332, 202.1165225333333], [21.336463296, 202.1129054666667], [21.340106743999996, 202.1092884], [21.343822533333334, 202.10567133333336], [21.347610663999998, 202.10205426666664], [21.351471136000004, 202.09843719999998], [21.355403949333336, 202.09482013333334], [21.359409104, 202.09120306666665], [21.3634866, 202.087586], [21.367636437333335, 202.08396893333332], [21.371858616, 202.08035186666666], [21.376153136000003, 202.0767348], [21.380519997333337, 202.07311773333333], [21.3849592, 202.06950066666667], [21.389470744, 202.0658836], [21.394054629333336, 202.06226653333334], [21.398710856, 202.05864946666668], [21.403439424000002, 202.05503240000002], [21.408240333333335, 202.05141533333335], [21.413113584, 202.04779826666666], [21.418059176, 202.0441812], [21.423077109333335, 202.04056413333336], [21.428167383999998, 202.03694706666667], [21.43333, 202.03333]],
+                {"bubblingMouseEvents": true, "color": "#aec7e8", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#aec7e8", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_402c5819164c985e8a0aea3986c23b10);
+        
+    
+            poly_line_2bfea2e8b3e30a87fd6a919e15ac615e.bindTooltip(
+                `<div>
+                     <b>CHINEN, Theodore Kamasuke (Rev)</b><br>Misato-son, Nakagami-gun Okinawa Prefecture &rarr; Honolulu, HI &rarr; Oahu, HI
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_14a2d2d1d442414923b4a70cd8ec601e = L.circleMarker(
+                [26.32244545, 127.75057298],
+                {"bubblingMouseEvents": true, "color": "#aec7e8", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#aec7e8", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_402c5819164c985e8a0aea3986c23b10);
+        
+    
+            circle_marker_14a2d2d1d442414923b4a70cd8ec601e.bindTooltip(
+                `<div>
+                     Start: Misato-son, Nakagami-gun Okinawa Prefecture
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_85d1cc15d565d84080af647baa3bffca = L.circleMarker(
+                [21.30992, 202.141842],
+                {"bubblingMouseEvents": true, "color": "#aec7e8", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#aec7e8", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_402c5819164c985e8a0aea3986c23b10);
+        
+    
+            circle_marker_85d1cc15d565d84080af647baa3bffca.bindTooltip(
+                `<div>
+                     Stage 1: Honolulu, HI
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5ba89f05a9c22a6a691d2e8c8aeba0f2 = L.circleMarker(
+                [21.43333, 202.03333],
+                {"bubblingMouseEvents": true, "color": "#aec7e8", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_402c5819164c985e8a0aea3986c23b10);
+        
+    
+            circle_marker_5ba89f05a9c22a6a691d2e8c8aeba0f2.bindTooltip(
+                `<div>
+                     End: Oahu, HI
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_00f1e9d1fed82ab73f7d8393d72663c9 = L.polyline(
+                [[34.10214937, 134.29742297], [33.22635027754333, 137.74017015433333], [32.41940612877333, 141.18291733866667], [31.681316923690005, 144.625664523], [31.012082662293338, 148.06841170733335], [30.411703344583337, 151.5111588916667], [29.88017897056001, 154.95390607600004], [29.41750954022333, 158.39665326033332], [29.02369505357334, 161.8394004446667], [28.69873551061, 165.28214762899998], [28.44263091133334, 168.72489481333338], [28.25538125574333, 172.16764199766666], [28.136986543840003, 175.610389182], [28.087446775623338, 179.05313636633332], [28.10676195109334, 182.4958835506667], [28.194932070250005, 185.938630735], [28.351957133093336, 189.38137791933335], [28.577837139623334, 192.8241251036667], [28.872572089840006, 196.266872288], [29.236161983743337, 199.70961947233332], [29.668606821333334, 203.1523666566667], [30.16990660261, 206.595113841], [30.740061327573333, 210.03786102533334], [31.379070996223334, 213.48060820966668], [32.086935608560005, 216.923355394], [32.863655164583335, 220.36610257833334], [33.70922966429334, 223.80884976266665], [34.62365910769, 227.251596947], [35.60694349477334, 230.69434413133334], [36.65908282554333, 234.13709131566665], [37.7800771, 237.5798385], [38.013897612166666, 238.16101544999998], [38.23609458533333, 238.7421924], [38.44666801950001, 239.32336935], [38.64561791466667, 239.90454630000002], [38.83294427083334, 240.48572325], [39.00864708800001, 241.06690020000005], [39.172726366166664, 241.64807714999998], [39.32518210533334, 242.22925410000002], [39.466014305499996, 242.81043104999998], [39.59522296666667, 243.39160800000002], [39.71280808883333, 243.97278494999998], [39.818769672, 244.55396190000002], [39.913107716166664, 245.13513884999998], [39.995822221333334, 245.7163158], [40.0669131875, 246.29749275], [40.126380614666665, 246.8786697], [40.17422450283333, 247.45984664999997], [40.210444851999995, 248.04102360000002], [40.235041662166665, 248.62220055], [40.24801493333334, 249.2033775], [40.249364665499996, 249.78455445], [40.23909085866667, 250.36573140000002], [40.21719351283333, 250.94690835], [40.183672628000004, 251.52808530000004], [40.13852820416667, 252.10926225000003], [40.081760241333335, 252.69043920000001], [40.0133687395, 253.27161615], [39.933353698666664, 253.8527931], [39.841715118833335, 254.43397005], [39.738453, 255.015147]],
+                {"bubblingMouseEvents": true, "color": "#ff7f0e", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#ff7f0e", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_402c5819164c985e8a0aea3986c23b10);
+        
+    
+            poly_line_00f1e9d1fed82ab73f7d8393d72663c9.bindTooltip(
+                `<div>
+                     <b>INAI, George</b><br>Awa-gun, Tokushima Prefecture &rarr; San Francisco, CA &rarr; Denver, CO
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5c79c047ad30925c4ebc3763d9e7786d = L.circleMarker(
+                [34.10214937, 134.29742297],
+                {"bubblingMouseEvents": true, "color": "#ff7f0e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff7f0e", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_402c5819164c985e8a0aea3986c23b10);
+        
+    
+            circle_marker_5c79c047ad30925c4ebc3763d9e7786d.bindTooltip(
+                `<div>
+                     Start: Awa-gun, Tokushima Prefecture
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c8a06079e22ce437461b56bdb6af0863 = L.circleMarker(
+                [37.7800771, 237.5798385],
+                {"bubblingMouseEvents": true, "color": "#ff7f0e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff7f0e", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_402c5819164c985e8a0aea3986c23b10);
+        
+    
+            circle_marker_c8a06079e22ce437461b56bdb6af0863.bindTooltip(
+                `<div>
+                     Stage 1: San Francisco, CA
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2d3ba29c11626e84c5520dcbd59fa258 = L.circleMarker(
+                [39.738453, 255.015147],
+                {"bubblingMouseEvents": true, "color": "#ff7f0e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_402c5819164c985e8a0aea3986c23b10);
+        
+    
+            circle_marker_2d3ba29c11626e84c5520dcbd59fa258.bindTooltip(
+                `<div>
+                     End: Denver, CO
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_2f16e775fd3d45eb4353a16d25971564 = L.polyline(
+                [[34.65514777, 133.91970199], [33.751304079369994, 137.72617057033332], [32.92358976034667, 141.53263915066665], [32.17200481293, 145.33910773099998], [31.49654923712, 149.14557631133334], [30.897223032916674, 152.95204489166667], [30.374026200320007, 156.75851347200003], [29.92695873933, 160.56498205233333], [29.556020649946674, 164.3714506326667], [29.261211932169996, 168.17791921299994], [29.042532586000007, 171.98438779333333], [28.899982611436663, 175.79085637366663], [28.83356200848, 179.597324954], [28.84327077713, 183.40379353433332], [28.92910891738667, 187.21026211466665], [29.091076429250002, 191.01673069499998], [29.329173312720002, 194.8231992753333], [29.643399567796664, 198.62966785566664], [30.03375519448, 202.43613643599997], [30.50024019277, 206.2426050163333], [31.04285456266667, 210.04907359666666], [31.66159830417, 213.85554217699996], [32.356471417280005, 217.6620107573333], [33.12747390199667, 221.46847933766665], [33.97460575832, 225.274947918], [34.89786698625, 229.08141649833334], [35.89725758578667, 232.88788507866664], [36.972777556930005, 236.694353659], [38.124426899679996, 240.50082223933333], [39.35220561403666, 244.30729081966663], [40.6561137, 248.1137594]],
+                {"bubblingMouseEvents": true, "color": "#ffbb78", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#ffbb78", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_402c5819164c985e8a0aea3986c23b10);
+        
+    
+            poly_line_2f16e775fd3d45eb4353a16d25971564.bindTooltip(
+                `<div>
+                     <b>NANBA, Jin</b><br>Okayama Prefecture &rarr; Murray, UT
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9d06d7bdbf2b40ebfbb211abfa3dddd4 = L.circleMarker(
+                [34.65514777, 133.91970199],
+                {"bubblingMouseEvents": true, "color": "#ffbb78", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffbb78", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_402c5819164c985e8a0aea3986c23b10);
+        
+    
+            circle_marker_9d06d7bdbf2b40ebfbb211abfa3dddd4.bindTooltip(
+                `<div>
+                     Start: Okayama Prefecture
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_74c09dd2a4014dcb22aa683993d61927 = L.circleMarker(
+                [40.6561137, 248.1137594],
+                {"bubblingMouseEvents": true, "color": "#ffbb78", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_402c5819164c985e8a0aea3986c23b10);
+        
+    
+            circle_marker_74c09dd2a4014dcb22aa683993d61927.bindTooltip(
+                `<div>
+                     End: Murray, UT
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_ee9edaaf2571b43cbd9ef3770ff93536 = L.polyline(
+                [[36.64858594, 138.19476132], [37.84811427657333, 141.85866454266665], [38.97436454869334, 145.52256776533335], [40.02733675636, 149.186470988], [41.00703089957333, 152.85037421066667], [41.91344697833333, 156.51427743333332], [42.74658499264001, 160.17818065600002], [43.506444942493324, 163.84208387866664], [44.193026827893334, 167.50598710133335], [44.80633064883999, 171.16989032399997], [45.34635640533334, 174.83379354666667], [45.813104097373326, 178.49769676933332], [46.206573724959995, 182.161599992], [46.52676528809334, 185.82550321466667], [46.77367878677333, 189.48940643733332], [46.947314221, 193.15330966], [47.047671590773334, 196.81721288266664], [47.074750896093335, 200.4811161053333], [47.028552136959995, 204.145019328], [46.90907531337333, 207.80892255066664], [46.716320425333336, 211.4728257733333], [46.450287472839996, 215.136728996], [46.110976455893336, 218.80063221866666], [45.69838737449333, 222.46453544133334], [45.21252022864, 226.12843866400002], [44.653375018333335, 229.7923418866667], [44.020951743573335, 233.45624510933334], [43.31525040436, 237.12014833199999], [42.53627100069333, 240.78405155466666], [41.684013532573324, 244.4479547773333], [40.758478, 248.11185799999998]],
+                {"bubblingMouseEvents": true, "color": "#2ca02c", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#2ca02c", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_402c5819164c985e8a0aea3986c23b10);
+        
+    
+            poly_line_ee9edaaf2571b43cbd9ef3770ff93536.bindTooltip(
+                `<div>
+                     <b>TOKUNAGA, Shigao </b><br>Nagano-shi, Nagano Prefecture &rarr; Salt Lake City, UT
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ac6494dc3f7fe70599093d533d65d868 = L.circleMarker(
+                [36.64858594, 138.19476132],
+                {"bubblingMouseEvents": true, "color": "#2ca02c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ca02c", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_402c5819164c985e8a0aea3986c23b10);
+        
+    
+            circle_marker_ac6494dc3f7fe70599093d533d65d868.bindTooltip(
+                `<div>
+                     Start: Nagano-shi, Nagano Prefecture
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f92d8e7a7850f84a7f7735445d2e16d9 = L.circleMarker(
+                [40.758478, 248.11185799999998],
+                {"bubblingMouseEvents": true, "color": "#2ca02c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_402c5819164c985e8a0aea3986c23b10);
+        
+    
+            circle_marker_f92d8e7a7850f84a7f7735445d2e16d9.bindTooltip(
+                `<div>
+                     End: Salt Lake City, UT
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_c36b2dbb184fd23d58fe12f89e95ed7c = L.polyline(
+                [[32.97969011, 130.81316762], [32.00436307232667, 134.95323359933332], [31.111837354240002, 139.09329957866666], [30.30211295574, 143.233365558], [29.57518987682667, 147.37343153733335], [28.931068117500004, 151.51349751666666], [28.369747677760003, 155.65356349600006], [27.891228557606663, 159.79362947533335], [27.49551075704, 163.9336954546667], [27.182594276059998, 168.07376143399998], [26.95247911466667, 172.21382741333335], [26.80516527286, 176.35389339266666], [26.74065275064, 180.493959372], [26.75894154800666, 184.63402535133332], [26.860031664959997, 188.77409133066666], [27.0439231015, 192.91415731], [27.310615857626665, 197.05422328933332], [27.66010993334, 201.19428926866664], [28.092405328639998, 205.334355248], [28.607502043526665, 209.47442122733332], [29.205400077999997, 213.6144872066667], [29.886099432059996, 217.754553186], [30.649600105706668, 221.89461916533332], [31.49590209894, 226.0346851446667], [32.425005411760004, 230.17475112400004], [33.436910044166666, 234.31481710333335], [34.53161599616, 238.45488308266667], [35.709123267740004, 242.594949062], [36.96943185890667, 246.73501504133336], [38.31254176966, 250.87508102066667], [39.738453, 255.015147]],
+                {"bubblingMouseEvents": true, "color": "#98df8a", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#98df8a", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_402c5819164c985e8a0aea3986c23b10);
+        
+    
+            poly_line_c36b2dbb184fd23d58fe12f89e95ed7c.bindTooltip(
+                `<div>
+                     <b>TOKUNAGA, Shinkichi</b><br>Toride-mura, Kikuchi-gun, Kumamoto Prefecture &rarr; Denver, CO
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_617615ca1ee7d22bbd3bfd4d6bbb9784 = L.circleMarker(
+                [32.97969011, 130.81316762],
+                {"bubblingMouseEvents": true, "color": "#98df8a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#98df8a", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_402c5819164c985e8a0aea3986c23b10);
+        
+    
+            circle_marker_617615ca1ee7d22bbd3bfd4d6bbb9784.bindTooltip(
+                `<div>
+                     Start: Toride-mura, Kikuchi-gun, Kumamoto Prefecture
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fcd4a861d7222de2e92ba456b9c0a50f = L.circleMarker(
+                [39.738453, 255.015147],
+                {"bubblingMouseEvents": true, "color": "#98df8a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_402c5819164c985e8a0aea3986c23b10);
+        
+    
+            circle_marker_fcd4a861d7222de2e92ba456b9c0a50f.bindTooltip(
+                `<div>
+                     End: Denver, CO
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_b3fa7359953867247fea1505e126ea35 = L.polyline(
+                [[33.55873468, 133.53106047], [33.02021078187666, 137.002349121], [32.55111265677334, 140.47363777200002], [32.151440304690006, 143.944926423], [31.821193725626674, 147.416215074], [31.56037291958334, 150.88750372500002], [31.368977886560007, 154.35879237600003], [31.247008626556667, 157.83008102699998], [31.194465139573342, 161.30136967800001], [31.21134742561, 164.77265832899997], [31.29765548466667, 168.24394698], [31.453389316743333, 171.71523563099996], [31.67854892184, 175.186524282], [31.973134299956666, 178.657812933], [32.337145451093335, 182.129101584], [32.77058237525, 185.600390235], [33.27344507242667, 189.071678886], [33.845733542623336, 192.54296753699998], [34.487447785840004, 196.014256188], [35.198587802076666, 199.485544839], [35.979153591333336, 202.95683349], [36.82914515361, 206.428122141], [37.748562488906664, 209.89941079199997], [38.737405597223336, 213.370699443], [39.79567447856, 216.841988094], [40.92336913291667, 220.313276745], [42.120489560293336, 223.784565396], [43.38703576069, 227.25585404699999], [44.723007734106666, 230.727142698], [46.128405480543336, 234.19843134899997], [47.603229, 237.66971999999998], [47.490693642733326, 238.0150511933333], [47.3712516616, 238.36038238666666], [47.2449030566, 238.70571357999998], [47.111647827733336, 239.05104477333336], [46.97148597500001, 239.39637596666665], [46.82441749840001, 239.74170716], [46.67044239793333, 240.0870383533333], [46.50956067360001, 240.43236954666668], [46.3417723254, 240.77770074], [46.16707735333334, 241.12303193333335], [45.985475757399996, 241.46836312666665], [45.7969675376, 241.81369432], [45.601552693933336, 242.15902551333332], [45.3992312264, 242.50435670666667], [45.190003135, 242.8496879], [44.973868419733336, 243.19501909333334], [44.750827080600004, 243.54035028666664], [44.5208791176, 243.88568148], [44.28402453073333, 244.23101267333334], [44.04026332000001, 244.57634386666666], [43.7895954854, 244.92167505999998], [43.532021026933336, 245.26700625333334], [43.2675399446, 245.61233744666663], [42.9961522384, 245.95766864], [42.71785790833334, 246.30299983333333], [42.4326569544, 246.64833102666665], [42.140549376600006, 246.99366222], [41.841535174933334, 247.33899341333336], [41.5356143494, 247.68432460666665], [41.2227869, 248.0296558]],
+                {"bubblingMouseEvents": true, "color": "#d62728", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#d62728", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_402c5819164c985e8a0aea3986c23b10);
+        
+    
+            poly_line_b3fa7359953867247fea1505e126ea35.bindTooltip(
+                `<div>
+                     <b>YANO (Mrs.)</b><br>Kochi Prefecture &rarr; Seattle, WA &rarr; Ogden, UT
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6c41f4ffa9ac0c9710c6835ed4a1b746 = L.circleMarker(
+                [33.55873468, 133.53106047],
+                {"bubblingMouseEvents": true, "color": "#d62728", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d62728", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_402c5819164c985e8a0aea3986c23b10);
+        
+    
+            circle_marker_6c41f4ffa9ac0c9710c6835ed4a1b746.bindTooltip(
+                `<div>
+                     Start: Kochi Prefecture
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_cae95fb813ada621a6a835661f7bcf54 = L.circleMarker(
+                [47.603229, 237.66971999999998],
+                {"bubblingMouseEvents": true, "color": "#d62728", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d62728", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_402c5819164c985e8a0aea3986c23b10);
+        
+    
+            circle_marker_cae95fb813ada621a6a835661f7bcf54.bindTooltip(
+                `<div>
+                     Stage 1: Seattle, WA
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f325709af6ef3818f35aab09f07b071a = L.circleMarker(
+                [41.2227869, 248.0296558],
+                {"bubblingMouseEvents": true, "color": "#d62728", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_402c5819164c985e8a0aea3986c23b10);
+        
+    
+            circle_marker_f325709af6ef3818f35aab09f07b071a.bindTooltip(
+                `<div>
+                     End: Ogden, UT
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_0f9d55a1bd1336c2e9e89ba370f24489 = L.polyline(
+                [[34.07393571, 135.15919458], [33.533977073939994, 138.57621209399997], [33.062358788160005, 141.993229608], [32.659080852660004, 145.410247122], [32.32414326744, 148.827264636], [32.0575460325, 152.24428214999998], [31.859289147840006, 155.661299664], [31.729372613459997, 159.07831717799996], [31.667796429360006, 162.495334692], [31.674560595539997, 165.91235220599995], [31.749665112000002, 169.32936972000002], [31.89310997874, 172.74638723399994], [32.10489519576, 176.16340474799998], [32.38502076306, 179.58042226199998], [32.73348668064, 182.99743977599996], [33.1502929485, 186.41445728999997], [33.63543956664, 189.83147480399998], [34.18892653506, 193.248492318], [34.81075385376, 196.66550983199997], [35.50092152274, 200.08252734599998], [36.259429542, 203.49954486], [37.08627791154, 206.91656237399997], [37.98146663136, 210.33357988799997], [38.94499570146, 213.75059740199998], [39.97686512184001, 217.167614916], [41.07707489250001, 220.58463243], [42.245625013440005, 224.001649944], [43.48251548466, 227.41866745799996], [44.78774630616, 230.835684972], [46.161317477939996, 234.25270248599998], [47.603229, 237.66971999999998], [47.35945720233333, 237.75579609999997], [47.11396388266667, 237.8418722], [46.866749041, 237.9279483], [46.61781267733334, 238.0140244], [46.36715479166667, 238.1001005], [46.11477538400001, 238.1861766], [45.86067445433333, 238.27225269999997], [45.604852002666675, 238.3583288], [45.347308029, 238.44440489999997], [45.08804253333334, 238.53048100000004], [44.827055515666665, 238.61655709999997], [44.564346976, 238.70263319999998], [44.29991691433333, 238.7887093], [44.03376533066667, 238.87478539999998], [43.765892225, 238.96086150000002], [43.49629759733334, 239.04693759999998], [43.224981447666664, 239.1330137], [42.951943776, 239.2190898], [42.67718458233334, 239.3051659], [42.400703866666674, 239.39124200000003], [42.122501629, 239.4773181], [41.84257786933334, 239.5633942], [41.56093258766667, 239.64947030000002], [41.277565784000004, 239.73554640000003], [40.99247745833333, 239.8216225], [40.705667610666666, 239.9076986], [40.417136241, 239.99377470000002], [40.12688334933334, 240.0798508], [39.83490893566666, 240.1659269], [39.541213, 240.252003]],
+                {"bubblingMouseEvents": true, "color": "#ff9896", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#ff9896", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_402c5819164c985e8a0aea3986c23b10);
+        
+    
+            poly_line_0f9d55a1bd1336c2e9e89ba370f24489.bindTooltip(
+                `<div>
+                     <b>ISHII, Kametaro</b><br>Hoshido, Arida-gun, Wakayama Prefecture &rarr; Seattle, WA &rarr; Sparks, NV
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_da21ad0a8595c39a106e9a379327d61f = L.circleMarker(
+                [34.07393571, 135.15919458],
+                {"bubblingMouseEvents": true, "color": "#ff9896", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff9896", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_402c5819164c985e8a0aea3986c23b10);
+        
+    
+            circle_marker_da21ad0a8595c39a106e9a379327d61f.bindTooltip(
+                `<div>
+                     Start: Hoshido, Arida-gun, Wakayama Prefecture
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d14a078a2f0f7dc53b0ef3b03042ae9b = L.circleMarker(
+                [47.603229, 237.66971999999998],
+                {"bubblingMouseEvents": true, "color": "#ff9896", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff9896", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_402c5819164c985e8a0aea3986c23b10);
+        
+    
+            circle_marker_d14a078a2f0f7dc53b0ef3b03042ae9b.bindTooltip(
+                `<div>
+                     Stage 1: Seattle, WA
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_da49acf9a1f93202afe4520180709c70 = L.circleMarker(
+                [39.541213, 240.252003],
+                {"bubblingMouseEvents": true, "color": "#ff9896", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_402c5819164c985e8a0aea3986c23b10);
+        
+    
+            circle_marker_da49acf9a1f93202afe4520180709c70.bindTooltip(
+                `<div>
+                     End: Sparks, NV
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>

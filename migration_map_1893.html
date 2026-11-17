@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_093c06b9b968a0c1cf1088d73402dbd1 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_093c06b9b968a0c1cf1088d73402dbd1" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_093c06b9b968a0c1cf1088d73402dbd1 = L.map(
+                "map_093c06b9b968a0c1cf1088d73402dbd1",
+                {
+                    center: [35.0, 180.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 3,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_28648752b6fb06d2052ba809f04ed8b2 = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Esri, HERE, Garmin, (c) OpenStreetMap contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_28648752b6fb06d2052ba809f04ed8b2.addTo(map_093c06b9b968a0c1cf1088d73402dbd1);
+        
+    
+            var tile_layer_815ae52ebb7589e7927e58bef6f1b97d = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Esri",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_815ae52ebb7589e7927e58bef6f1b97d.addTo(map_093c06b9b968a0c1cf1088d73402dbd1);
+        
+    
+            var layer_control_0375595f94fdbc788c40fba8bc067588_layers = {
+                base_layers : {
+                    "Esri Light Gray" : tile_layer_28648752b6fb06d2052ba809f04ed8b2,
+                    "Esri Street Map" : tile_layer_815ae52ebb7589e7927e58bef6f1b97d,
+                },
+                overlays :  {
+                },
+            };
+            let layer_control_0375595f94fdbc788c40fba8bc067588 = L.control.layers(
+                layer_control_0375595f94fdbc788c40fba8bc067588_layers.base_layers,
+                layer_control_0375595f94fdbc788c40fba8bc067588_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_093c06b9b968a0c1cf1088d73402dbd1);
+
+        
+    
+            var poly_line_f01b07405433f0cd18def007467de53b = L.polyline(
+                [[32.80320492, 130.70802355], [32.301390835674006, 134.24042504325527], [31.87022478121312, 137.77282653651054], [31.509706756617334, 141.30522802976583], [31.219836761886654, 144.8376295230211], [31.000614797021086, 148.37003101627636], [30.85204086202062, 151.90243250953165], [30.774114956885253, 155.43483400278689], [30.766837081615, 158.96723549604215], [30.83020723620984, 162.4996369892974], [30.964225420669802, 166.03203848255268], [31.168891634994853, 169.5644399758079], [31.44420587918502, 173.0968414690632], [31.790168153240295, 176.62924296231847], [32.20677845716067, 180.16164445557376], [32.69403679094615, 183.694045948829], [33.25194315459673, 187.2264474420843], [33.88049754811242, 190.75884893533953], [34.57969997149323, 194.29125042859482], [35.34955042473912, 197.82365192185006], [36.190048907850134, 201.35605341510535], [37.101195420826244, 204.8884549083606], [38.08298996366746, 208.42085640161588], [39.135432536373784, 211.95325789487111], [40.258523138945215, 215.4856593881264], [41.45226177138175, 219.0180608813817], [42.71664843368339, 222.55046237463694], [44.05168312585013, 226.08286386789223], [45.45736584788198, 229.61526536114746], [46.93369659977894, 233.14766685440273], [48.480675381541, 236.680068347658], [47.895669096750325, 236.88527215940275], [47.31476688819455, 237.0904759711475], [46.737968755873666, 237.29567978289222], [46.16527469978768, 237.50088359463695], [45.596684719936576, 237.7060874063817], [45.03219881632039, 237.91129121812645], [44.471816988939075, 238.1164950298711], [43.91553923779268, 238.3216988416159], [43.36336556288116, 238.52690265336057], [42.81529596420454, 238.73210646510535], [42.2713304417628, 238.93731027685004], [41.73146899555597, 239.1425140885948], [41.19571162558404, 239.3477179003395], [40.664058331846995, 239.55292171208424], [40.13650911434485, 239.758125523829], [39.613063973077594, 239.96332933557375], [39.09372290804524, 240.16853314731844], [38.578485919247775, 240.3737369590632], [38.06735300668521, 240.57894077080795], [37.56032417035753, 240.78414458255267], [37.05739941026475, 240.9893483942974], [36.558578726406864, 241.19455220604212], [36.06386211878388, 241.39975601778687], [35.573249587395786, 241.6049598295316], [35.08674113224259, 241.81016364127635], [34.604336753324276, 242.01536745302104], [34.12603645064087, 242.2205712647658], [33.651840224192355, 242.42577507651055], [33.18174807397873, 242.63097888825524], [32.71576, 242.8361827]],
+                {"bubblingMouseEvents": true, "color": "#1f77b4", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#1f77b4", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_093c06b9b968a0c1cf1088d73402dbd1);
+        
+    
+            poly_line_f01b07405433f0cd18def007467de53b.bindTooltip(
+                `<div>
+                     <b>MATSUMOTO, Manki</b><br>Kamimashiki, Kumamoto Prefecture &rarr; San Francisco, CA via Victoria, Canada &rarr; San Diego, CA
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2b68e310f3227184c85b92bf3b7c06f5 = L.circleMarker(
+                [32.80320492, 130.70802355],
+                {"bubblingMouseEvents": true, "color": "#1f77b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1f77b4", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_093c06b9b968a0c1cf1088d73402dbd1);
+        
+    
+            circle_marker_2b68e310f3227184c85b92bf3b7c06f5.bindTooltip(
+                `<div>
+                     Start: Kamimashiki, Kumamoto Prefecture
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d3274f7f458b71559eb3b4d6c8e8d987 = L.circleMarker(
+                [48.480675381541, 236.680068347658],
+                {"bubblingMouseEvents": true, "color": "#1f77b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1f77b4", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_093c06b9b968a0c1cf1088d73402dbd1);
+        
+    
+            circle_marker_d3274f7f458b71559eb3b4d6c8e8d987.bindTooltip(
+                `<div>
+                     Stage 1: San Francisco, CA via Victoria, Canada
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_80c99947986b93d90ff18764c1ba0929 = L.circleMarker(
+                [32.71576, 242.8361827],
+                {"bubblingMouseEvents": true, "color": "#1f77b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_093c06b9b968a0c1cf1088d73402dbd1);
+        
+    
+            circle_marker_80c99947986b93d90ff18764c1ba0929.bindTooltip(
+                `<div>
+                     End: San Diego, CA
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>
