@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_859589631651d0870f45337b47ffa7af {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_859589631651d0870f45337b47ffa7af" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_859589631651d0870f45337b47ffa7af = L.map(
+                "map_859589631651d0870f45337b47ffa7af",
+                {
+                    center: [35.0, 180.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 3,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_b0c8e8c2a677ce3a08716b4e503cbea6 = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Esri, HERE, Garmin, (c) OpenStreetMap contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_b0c8e8c2a677ce3a08716b4e503cbea6.addTo(map_859589631651d0870f45337b47ffa7af);
+        
+    
+            var tile_layer_e2a510b4b7d7316f15cdb4bc2a45d6c8 = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Esri",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_e2a510b4b7d7316f15cdb4bc2a45d6c8.addTo(map_859589631651d0870f45337b47ffa7af);
+        
+    
+            var layer_control_1574d839db464fcaa77a039341499cb4_layers = {
+                base_layers : {
+                    "Esri Light Gray" : tile_layer_b0c8e8c2a677ce3a08716b4e503cbea6,
+                    "Esri Street Map" : tile_layer_e2a510b4b7d7316f15cdb4bc2a45d6c8,
+                },
+                overlays :  {
+                },
+            };
+            let layer_control_1574d839db464fcaa77a039341499cb4 = L.control.layers(
+                layer_control_1574d839db464fcaa77a039341499cb4_layers.base_layers,
+                layer_control_1574d839db464fcaa77a039341499cb4_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_859589631651d0870f45337b47ffa7af);
+
+        
+    
+            var poly_line_5eb5f36c9ccda562f7d8ad77e9fb66e4 = L.polyline(
+                [[34.97515624, 138.3832445], [33.945115987499996, 141.8290248833333], [32.98399134266666, 145.27480526666668], [32.0917823055, 148.72058565], [31.268488876, 152.16636603333333], [30.51411105416667, 155.6121464166667], [29.828648840000007, 159.05792680000002], [29.212102233499994, 162.50370718333335], [28.66447123466667, 165.9494875666667], [28.185755843499994, 169.39526794999998], [27.775956060000002, 172.84104833333333], [27.435071884166664, 176.28682871666663], [27.163103316, 179.7326091], [26.960050355499998, 183.17838948333335], [26.825913002666667, 186.62416986666665], [26.7606912575, 190.06995025], [26.76438512, 193.51573063333336], [26.836994590166668, 196.96151101666666], [26.978519668, 200.40729140000002], [27.1889603535, 203.85307178333335], [27.46831664666667, 207.29885216666668], [27.8165885475, 210.74463255], [28.233776056000004, 214.19041293333333], [28.71987917216667, 217.63619331666666], [29.274897896000002, 221.08197370000002], [29.8988322275, 224.52775408333338], [30.59168216666667, 227.9735344666667], [31.353447713500003, 231.41931485000003], [32.184128868, 234.86509523333336], [33.08372563016667, 238.31087561666666], [34.052238, 241.75665600000002]],
+                {"bubblingMouseEvents": true, "color": "#1f77b4", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#1f77b4", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_859589631651d0870f45337b47ffa7af);
+        
+    
+            poly_line_5eb5f36c9ccda562f7d8ad77e9fb66e4.bindTooltip(
+                `<div>
+                     <b>KATAYAMA, Yutaka</b><br>Keta-Mura, Shūchi-gun, Shizuoka Prefecture &rarr; Los Angeles, CA
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9dc7f0de45eddc8d7a441350c850ac85 = L.circleMarker(
+                [34.97515624, 138.3832445],
+                {"bubblingMouseEvents": true, "color": "#1f77b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1f77b4", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_859589631651d0870f45337b47ffa7af);
+        
+    
+            circle_marker_9dc7f0de45eddc8d7a441350c850ac85.bindTooltip(
+                `<div>
+                     Start: Keta-Mura, Shūchi-gun, Shizuoka Prefecture
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8f1e2cec4b24687a9a71e9e667b61a15 = L.circleMarker(
+                [34.052238, 241.75665600000002],
+                {"bubblingMouseEvents": true, "color": "#1f77b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_859589631651d0870f45337b47ffa7af);
+        
+    
+            circle_marker_8f1e2cec4b24687a9a71e9e667b61a15.bindTooltip(
+                `<div>
+                     End: Los Angeles, CA
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>

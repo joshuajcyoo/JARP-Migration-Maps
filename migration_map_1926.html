@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_a5f7442b3be619461296feb7e4467b31 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_a5f7442b3be619461296feb7e4467b31" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_a5f7442b3be619461296feb7e4467b31 = L.map(
+                "map_a5f7442b3be619461296feb7e4467b31",
+                {
+                    center: [35.0, 180.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 3,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_6485cb44c045aa375b3f348d44a26fca = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Esri, HERE, Garmin, (c) OpenStreetMap contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_6485cb44c045aa375b3f348d44a26fca.addTo(map_a5f7442b3be619461296feb7e4467b31);
+        
+    
+            var tile_layer_2f80675f78af95cc68d47172e556713b = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Esri",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_2f80675f78af95cc68d47172e556713b.addTo(map_a5f7442b3be619461296feb7e4467b31);
+        
+    
+            var layer_control_11f9c7fc981ca6ad913020231b3a81c4_layers = {
+                base_layers : {
+                    "Esri Light Gray" : tile_layer_6485cb44c045aa375b3f348d44a26fca,
+                    "Esri Street Map" : tile_layer_2f80675f78af95cc68d47172e556713b,
+                },
+                overlays :  {
+                },
+            };
+            let layer_control_11f9c7fc981ca6ad913020231b3a81c4 = L.control.layers(
+                layer_control_11f9c7fc981ca6ad913020231b3a81c4_layers.base_layers,
+                layer_control_11f9c7fc981ca6ad913020231b3a81c4_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_a5f7442b3be619461296feb7e4467b31);
+
+        
+    
+            var poly_line_508beea36a74501d42ce942f278daa66 = L.polyline(
+                [[37.7800771, 237.5798385], [37.785454987499996, 237.58366858333332], [37.790756273333336, 237.58749866666668], [37.79598095750001, 237.59132875000003], [37.801129040000006, 237.59515883333333], [37.806200520833336, 237.59898891666668], [37.81119540000001, 237.60281900000004], [37.8161136775, 237.60664908333328], [37.82095535333334, 237.61047916666666], [37.825720427499995, 237.61430924999996], [37.83040890000001, 237.61813933333332], [37.83502077083333, 237.62196941666662], [37.839556040000005, 237.62579949999997], [37.8440147075, 237.62962958333333], [37.848396773333334, 237.63345966666668], [37.852702237500004, 237.63728974999998], [37.856931100000004, 237.6411198333333], [37.861083360833334, 237.64494991666666], [37.86515902, 237.64878], [37.8691580775, 237.65261008333331], [37.87308053333334, 237.65644016666664], [37.876926387500006, 237.66027025], [37.88069564, 237.66410033333332], [37.884388290833336, 237.66793041666665], [37.88800434000001, 237.6717605], [37.891543787500005, 237.67559058333336], [37.89500663333334, 237.67942066666666], [37.8983928775, 237.68325075], [37.90170252, 237.68708083333334], [37.90493556083334, 237.69091091666664], [37.908092, 237.694741]],
+                {"bubblingMouseEvents": true, "color": "#1f77b4", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#1f77b4", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a5f7442b3be619461296feb7e4467b31);
+        
+    
+            poly_line_508beea36a74501d42ce942f278daa66.bindTooltip(
+                `<div>
+                     <b>ADACHI, Wakako Rose</b><br>San Francisco, CA &rarr; El Cerrito, CA
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_166cc7354838ecf080e91df2f955673a = L.circleMarker(
+                [37.7800771, 237.5798385],
+                {"bubblingMouseEvents": true, "color": "#1f77b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1f77b4", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_a5f7442b3be619461296feb7e4467b31);
+        
+    
+            circle_marker_166cc7354838ecf080e91df2f955673a.bindTooltip(
+                `<div>
+                     Start: San Francisco, CA
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_02093ff152722e9bc08487452351055d = L.circleMarker(
+                [37.908092, 237.694741],
+                {"bubblingMouseEvents": true, "color": "#1f77b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_a5f7442b3be619461296feb7e4467b31);
+        
+    
+            circle_marker_02093ff152722e9bc08487452351055d.bindTooltip(
+                `<div>
+                     End: El Cerrito, CA
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_66267f387869e9b9a15bf165b0dbf97c = L.polyline(
+                [[38.26821957, 140.86940215], [39.18681570571667, 144.09308336166666], [40.040938217199994, 147.31676457333336], [40.830587104450004, 150.540445785], [41.55576236746667, 153.76412699666668], [42.21646400625, 156.98780820833335], [42.81269202080001, 160.21148942000005], [43.34444641111666, 163.43517063166667], [43.811727177200005, 166.65885184333334], [44.214534319049996, 169.88253305499998], [44.55286783666667, 173.10621426666668], [44.826727730049996, 176.32989547833333], [45.0361139992, 179.55357669], [45.18102664411666, 182.77725790166664], [45.2614656648, 186.00093911333335], [45.27743106125, 189.224620325], [45.22892283346667, 192.44830153666666], [45.11594098145, 195.67198274833333], [44.9384855052, 198.89566395999998], [44.69655640471666, 202.11934517166665], [44.39015368, 205.34302638333332], [44.01927733105, 208.566707595], [43.58392735786667, 211.79038880666667], [43.08410376044999, 215.0140700183333], [42.519806538800005, 218.23775123000001], [41.89103569291667, 221.46143244166666], [41.1977912228, 224.68511365333333], [40.440073128449995, 227.908794865], [39.61788140986667, 231.13247607666668], [38.73121606705, 234.35615728833332], [37.7800771, 237.5798385], [38.69289608376667, 234.30289371666666], [39.54017617186667, 231.02594893333332], [40.3219173643, 227.74900415000002], [41.038119661066666, 224.47205936666666], [41.688783062166664, 221.19511458333332], [42.27390756760001, 217.91816980000004], [42.79349317736666, 214.64122501666665], [43.24753989146668, 211.36428023333337], [43.6360477099, 208.08733544999998], [43.959016632666675, 204.8103906666667], [44.21644665976666, 201.53344588333331], [44.4083377912, 198.2565011], [44.534690026966665, 194.97955631666665], [44.59550336706666, 191.7026115333333], [44.590777811500004, 188.42566675], [44.52051336026667, 185.14872196666667], [44.384710013366664, 181.87177718333334], [44.183367770800004, 178.5948324], [43.91648663256667, 175.31788761666667], [43.584066598666666, 172.04094283333336], [43.186107669100004, 168.76399805], [42.722609843866664, 165.48705326666666], [42.19357312296667, 162.21010848333333], [41.5989975064, 158.93316370000002], [40.93888299416667, 155.65621891666666], [40.21322958626667, 152.37927413333333], [39.4220372827, 149.10232935], [38.565306083466666, 145.82538456666666], [37.64303598856667, 142.54843978333332], [36.655226998, 139.271495], [37.91937709943, 143.31529119366664], [39.10265127698668, 147.35908738733332], [40.20504953067001, 151.402883581], [41.22657186048001, 155.44667977466668], [42.16721826641667, 159.49047596833333], [43.026988748480015, 163.53427216200004], [43.80588330667, 167.57806835566666], [44.50390194098667, 171.62186454933337], [45.12104465143, 175.665660743], [45.65731143800001, 179.7094569366667], [46.11270230069666, 183.75325313033332], [46.48721723952, 187.797049324], [46.780856254469995, 191.84084551766665], [46.99361934554667, 195.88464171133333], [47.12550651275001, 199.928437905], [47.17651775608, 203.97223409866666], [47.14665307553666, 208.0160302923333], [47.03591247112001, 212.05982648600002], [46.84429594283, 216.10362267966667], [46.57180349066667, 220.14741887333335], [46.218435114630005, 224.19121506699997], [45.784190814720006, 228.23501126066668], [45.26907059093667, 232.27880745433333], [44.67307444328, 236.32260364800004], [43.99620237175, 240.3663998416667], [43.23845437634667, 244.41019603533334], [42.39983045707, 248.453992229], [41.48033061392, 252.49778842266667], [40.47995484689667, 256.54158461633335], [39.398703156, 260.58538081], [39.03847664430333, 259.9577566496667], [38.69080261581334, 259.3301324893334], [38.35568107053001, 258.702508329], [38.033112008453344, 258.0748841686667], [37.72309542958334, 257.4472600083334], [37.42563133392001, 256.819635848], [37.140719721463334, 256.19201168766665], [36.86836059221334, 255.5643875273334], [36.60855394617, 254.93676336699997], [36.361299783333344, 254.3091392066667], [36.12659810370334, 253.68151504633332], [35.90444890728, 253.05389088600003], [35.69485219406333, 252.42626672566666], [35.49780796405334, 251.79864256533335], [35.313316217250005, 251.171018405], [35.141376953653335, 250.54339424466667], [34.981990173263334, 249.91577008433333], [34.83515587608, 249.288145924], [34.70087406210334, 248.66052176366668], [34.579144731333336, 248.03289760333337], [34.46996788377, 247.40527344300003], [34.37334351941334, 246.7776492826667], [34.28927163826334, 246.15002512233337], [34.21775224032, 245.522400962], [34.15878532558334, 244.8947768016667], [34.112370894053335, 244.26715264133335], [34.07850894573, 243.639528481], [34.057199480613335, 243.0119043206667], [34.04844249870334, 242.38428016033333], [34.052238, 241.75665600000002]],
+                {"bubblingMouseEvents": true, "color": "#aec7e8", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#aec7e8", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a5f7442b3be619461296feb7e4467b31);
+        
+    
+            poly_line_66267f387869e9b9a15bf165b0dbf97c.bindTooltip(
+                `<div>
+                     <b>Mrs. SEKIGUCHI</b><br>Sendai, Miyagi Prefecture &rarr; San Francisco, CA &rarr; Japan &rarr; US &rarr; Los Angeles, CA
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fd18c033b66c81e4e7d8e8f63125eb42 = L.circleMarker(
+                [38.26821957, 140.86940215],
+                {"bubblingMouseEvents": true, "color": "#aec7e8", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#aec7e8", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_a5f7442b3be619461296feb7e4467b31);
+        
+    
+            circle_marker_fd18c033b66c81e4e7d8e8f63125eb42.bindTooltip(
+                `<div>
+                     Start: Sendai, Miyagi Prefecture
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6a9d7a1f7df2f2f28c6055559aa8aa99 = L.circleMarker(
+                [37.7800771, 237.5798385],
+                {"bubblingMouseEvents": true, "color": "#aec7e8", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#aec7e8", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_a5f7442b3be619461296feb7e4467b31);
+        
+    
+            circle_marker_6a9d7a1f7df2f2f28c6055559aa8aa99.bindTooltip(
+                `<div>
+                     Stage 1: San Francisco, CA
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d5f2d456c730c6606004037d14f7bb90 = L.circleMarker(
+                [36.655226998, 139.271495],
+                {"bubblingMouseEvents": true, "color": "#aec7e8", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#aec7e8", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_a5f7442b3be619461296feb7e4467b31);
+        
+    
+            circle_marker_d5f2d456c730c6606004037d14f7bb90.bindTooltip(
+                `<div>
+                     Stage 2: Japan
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3b2b4def787760dda227a54539cbd42b = L.circleMarker(
+                [39.398703156, 260.58538081],
+                {"bubblingMouseEvents": true, "color": "#aec7e8", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#aec7e8", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_a5f7442b3be619461296feb7e4467b31);
+        
+    
+            circle_marker_3b2b4def787760dda227a54539cbd42b.bindTooltip(
+                `<div>
+                     Stage 3: US
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_abf239a6efa621d82f8cd6adde9cee89 = L.circleMarker(
+                [34.052238, 241.75665600000002],
+                {"bubblingMouseEvents": true, "color": "#aec7e8", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_a5f7442b3be619461296feb7e4467b31);
+        
+    
+            circle_marker_abf239a6efa621d82f8cd6adde9cee89.bindTooltip(
+                `<div>
+                     End: Los Angeles, CA
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_efcbb096d5233c6a4ef8e88e1c22a971 = L.polyline(
+                [[38.26821957, 140.86940215], [39.18681570571667, 144.09308336166666], [40.040938217199994, 147.31676457333336], [40.830587104450004, 150.540445785], [41.55576236746667, 153.76412699666668], [42.21646400625, 156.98780820833335], [42.81269202080001, 160.21148942000005], [43.34444641111666, 163.43517063166667], [43.811727177200005, 166.65885184333334], [44.214534319049996, 169.88253305499998], [44.55286783666667, 173.10621426666668], [44.826727730049996, 176.32989547833333], [45.0361139992, 179.55357669], [45.18102664411666, 182.77725790166664], [45.2614656648, 186.00093911333335], [45.27743106125, 189.224620325], [45.22892283346667, 192.44830153666666], [45.11594098145, 195.67198274833333], [44.9384855052, 198.89566395999998], [44.69655640471666, 202.11934517166665], [44.39015368, 205.34302638333332], [44.01927733105, 208.566707595], [43.58392735786667, 211.79038880666667], [43.08410376044999, 215.0140700183333], [42.519806538800005, 218.23775123000001], [41.89103569291667, 221.46143244166666], [41.1977912228, 224.68511365333333], [40.440073128449995, 227.908794865], [39.61788140986667, 231.13247607666668], [38.73121606705, 234.35615728833332], [37.7800771, 237.5798385], [38.69289608376667, 234.30289371666666], [39.54017617186667, 231.02594893333332], [40.3219173643, 227.74900415000002], [41.038119661066666, 224.47205936666666], [41.688783062166664, 221.19511458333332], [42.27390756760001, 217.91816980000004], [42.79349317736666, 214.64122501666665], [43.24753989146668, 211.36428023333337], [43.6360477099, 208.08733544999998], [43.959016632666675, 204.8103906666667], [44.21644665976666, 201.53344588333331], [44.4083377912, 198.2565011], [44.534690026966665, 194.97955631666665], [44.59550336706666, 191.7026115333333], [44.590777811500004, 188.42566675], [44.52051336026667, 185.14872196666667], [44.384710013366664, 181.87177718333334], [44.183367770800004, 178.5948324], [43.91648663256667, 175.31788761666667], [43.584066598666666, 172.04094283333336], [43.186107669100004, 168.76399805], [42.722609843866664, 165.48705326666666], [42.19357312296667, 162.21010848333333], [41.5989975064, 158.93316370000002], [40.93888299416667, 155.65621891666666], [40.21322958626667, 152.37927413333333], [39.4220372827, 149.10232935], [38.565306083466666, 145.82538456666666], [37.64303598856667, 142.54843978333332], [36.655226998, 139.271495], [37.91937709943, 143.31529119366664], [39.10265127698668, 147.35908738733332], [40.20504953067001, 151.402883581], [41.22657186048001, 155.44667977466668], [42.16721826641667, 159.49047596833333], [43.026988748480015, 163.53427216200004], [43.80588330667, 167.57806835566666], [44.50390194098667, 171.62186454933337], [45.12104465143, 175.665660743], [45.65731143800001, 179.7094569366667], [46.11270230069666, 183.75325313033332], [46.48721723952, 187.797049324], [46.780856254469995, 191.84084551766665], [46.99361934554667, 195.88464171133333], [47.12550651275001, 199.928437905], [47.17651775608, 203.97223409866666], [47.14665307553666, 208.0160302923333], [47.03591247112001, 212.05982648600002], [46.84429594283, 216.10362267966667], [46.57180349066667, 220.14741887333335], [46.218435114630005, 224.19121506699997], [45.784190814720006, 228.23501126066668], [45.26907059093667, 232.27880745433333], [44.67307444328, 236.32260364800004], [43.99620237175, 240.3663998416667], [43.23845437634667, 244.41019603533334], [42.39983045707, 248.453992229], [41.48033061392, 252.49778842266667], [40.47995484689667, 256.54158461633335], [39.398703156, 260.58538081], [39.03847664430333, 259.9577566496667], [38.69080261581334, 259.3301324893334], [38.35568107053001, 258.702508329], [38.033112008453344, 258.0748841686667], [37.72309542958334, 257.4472600083334], [37.42563133392001, 256.819635848], [37.140719721463334, 256.19201168766665], [36.86836059221334, 255.5643875273334], [36.60855394617, 254.93676336699997], [36.361299783333344, 254.3091392066667], [36.12659810370334, 253.68151504633332], [35.90444890728, 253.05389088600003], [35.69485219406333, 252.42626672566666], [35.49780796405334, 251.79864256533335], [35.313316217250005, 251.171018405], [35.141376953653335, 250.54339424466667], [34.981990173263334, 249.91577008433333], [34.83515587608, 249.288145924], [34.70087406210334, 248.66052176366668], [34.579144731333336, 248.03289760333337], [34.46996788377, 247.40527344300003], [34.37334351941334, 246.7776492826667], [34.28927163826334, 246.15002512233337], [34.21775224032, 245.522400962], [34.15878532558334, 244.8947768016667], [34.112370894053335, 244.26715264133335], [34.07850894573, 243.639528481], [34.057199480613335, 243.0119043206667], [34.04844249870334, 242.38428016033333], [34.052238, 241.75665600000002]],
+                {"bubblingMouseEvents": true, "color": "#ff7f0e", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#ff7f0e", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_a5f7442b3be619461296feb7e4467b31);
+        
+    
+            poly_line_efcbb096d5233c6a4ef8e88e1c22a971.bindTooltip(
+                `<div>
+                     <b>SEKIGUCHI, Kumakichi (Pen name: NOBARA) </b><br>Sendai, Miyagi Prefecture &rarr; San Francisco, CA &rarr; Japan &rarr; US &rarr; Los Angeles, CA
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_cc54a6f40a6b4fc8441eedffe87c789b = L.circleMarker(
+                [38.26821957, 140.86940215],
+                {"bubblingMouseEvents": true, "color": "#ff7f0e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff7f0e", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_a5f7442b3be619461296feb7e4467b31);
+        
+    
+            circle_marker_cc54a6f40a6b4fc8441eedffe87c789b.bindTooltip(
+                `<div>
+                     Start: Sendai, Miyagi Prefecture
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_77f9efe5b32c93f7aa6c14b63e9a3aee = L.circleMarker(
+                [37.7800771, 237.5798385],
+                {"bubblingMouseEvents": true, "color": "#ff7f0e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff7f0e", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_a5f7442b3be619461296feb7e4467b31);
+        
+    
+            circle_marker_77f9efe5b32c93f7aa6c14b63e9a3aee.bindTooltip(
+                `<div>
+                     Stage 1: San Francisco, CA
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a5a854e228bebe256048a709bf449a8e = L.circleMarker(
+                [36.655226998, 139.271495],
+                {"bubblingMouseEvents": true, "color": "#ff7f0e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff7f0e", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_a5f7442b3be619461296feb7e4467b31);
+        
+    
+            circle_marker_a5a854e228bebe256048a709bf449a8e.bindTooltip(
+                `<div>
+                     Stage 2: Japan
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0eb3f32f760cd09d89d18c370221cbb1 = L.circleMarker(
+                [39.398703156, 260.58538081],
+                {"bubblingMouseEvents": true, "color": "#ff7f0e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff7f0e", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_a5f7442b3be619461296feb7e4467b31);
+        
+    
+            circle_marker_0eb3f32f760cd09d89d18c370221cbb1.bindTooltip(
+                `<div>
+                     Stage 3: US
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6e07bd02ccd8a00b8687ef2d60261c71 = L.circleMarker(
+                [34.052238, 241.75665600000002],
+                {"bubblingMouseEvents": true, "color": "#ff7f0e", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_a5f7442b3be619461296feb7e4467b31);
+        
+    
+            circle_marker_6e07bd02ccd8a00b8687ef2d60261c71.bindTooltip(
+                `<div>
+                     End: Los Angeles, CA
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>

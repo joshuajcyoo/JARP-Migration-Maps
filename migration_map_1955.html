@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_3cb02eae43c6104d4d260f9fd61ba794 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_3cb02eae43c6104d4d260f9fd61ba794" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_3cb02eae43c6104d4d260f9fd61ba794 = L.map(
+                "map_3cb02eae43c6104d4d260f9fd61ba794",
+                {
+                    center: [35.0, 180.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 3,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_158803fb26d064295e8ee9602a8e0568 = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Esri, HERE, Garmin, (c) OpenStreetMap contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_158803fb26d064295e8ee9602a8e0568.addTo(map_3cb02eae43c6104d4d260f9fd61ba794);
+        
+    
+            var tile_layer_c08a7b7802b9c2b74c7f20cfa337ff7b = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Esri",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_c08a7b7802b9c2b74c7f20cfa337ff7b.addTo(map_3cb02eae43c6104d4d260f9fd61ba794);
+        
+    
+            var layer_control_61c5759ab608000c4ffc9f2d25a39cee_layers = {
+                base_layers : {
+                    "Esri Light Gray" : tile_layer_158803fb26d064295e8ee9602a8e0568,
+                    "Esri Street Map" : tile_layer_c08a7b7802b9c2b74c7f20cfa337ff7b,
+                },
+                overlays :  {
+                },
+            };
+            let layer_control_61c5759ab608000c4ffc9f2d25a39cee = L.control.layers(
+                layer_control_61c5759ab608000c4ffc9f2d25a39cee_layers.base_layers,
+                layer_control_61c5759ab608000c4ffc9f2d25a39cee_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_3cb02eae43c6104d4d260f9fd61ba794);
+
+        
+    
+            var poly_line_0efd95006b87a01b2274a517833fa6e4 = L.polyline(
+                [[35.68945633, 139.69171609], [37.07735004513, 143.83741905366665], [38.382329700986666, 147.98312201733336], [39.60439529757, 152.128824981], [40.74354683488, 156.2745279446667], [41.79978431291667, 160.42023090833337], [42.77310773168001, 164.56593387200004], [43.66351709116999, 168.71163683566664], [44.47101239138667, 172.85733979933335], [45.195593632329995, 177.003042763], [45.837260814000004, 181.1487457266667], [46.396013936396656, 185.29444869033333], [46.871852999519994, 189.440151654], [47.26477800337, 193.58585461766668], [47.574788947946665, 197.73155758133333], [47.80188583325, 201.877260545], [47.94606865928, 206.0229635086667], [48.00733742603666, 210.16866647233334], [47.98569213352, 214.314369436], [47.88113278173, 218.46007239966667], [47.693659370666666, 222.60577536333335], [47.42327190032999, 226.75147832700003], [47.06997037072, 230.89718129066668], [46.633754781836664, 235.0428842543334], [46.11462513368, 239.188587218], [45.512581426249994, 243.3342901816667], [44.82762365954667, 247.47999314533337], [44.05975183357, 251.62569610900005], [43.20896594832, 255.7713990726667], [42.27526600379666, 259.91710203633335], [41.258652, 264.062805]],
+                {"bubblingMouseEvents": true, "color": "#1f77b4", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#1f77b4", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_3cb02eae43c6104d4d260f9fd61ba794);
+        
+    
+            poly_line_0efd95006b87a01b2274a517833fa6e4.bindTooltip(
+                `<div>
+                     <b>OKADA, Noriaki</b><br>Tokyo &rarr; Omaha, NE
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ab869106fb21d7c64a6d38e5a22adabb = L.circleMarker(
+                [35.68945633, 139.69171609],
+                {"bubblingMouseEvents": true, "color": "#1f77b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1f77b4", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3cb02eae43c6104d4d260f9fd61ba794);
+        
+    
+            circle_marker_ab869106fb21d7c64a6d38e5a22adabb.bindTooltip(
+                `<div>
+                     Start: Tokyo
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_df082f78ab1fc5dff23c45ca437fe938 = L.circleMarker(
+                [41.258652, 264.062805],
+                {"bubblingMouseEvents": true, "color": "#1f77b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_3cb02eae43c6104d4d260f9fd61ba794);
+        
+    
+            circle_marker_df082f78ab1fc5dff23c45ca437fe938.bindTooltip(
+                `<div>
+                     End: Omaha, NE
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_7b7660bbf626a97e2fc2d21ada24a8cb {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_7b7660bbf626a97e2fc2d21ada24a8cb" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_7b7660bbf626a97e2fc2d21ada24a8cb = L.map(
+                "map_7b7660bbf626a97e2fc2d21ada24a8cb",
+                {
+                    center: [35.0, 180.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 3,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_be58317be7d389579c30f7ca420d27fc = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Esri, HERE, Garmin, (c) OpenStreetMap contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_be58317be7d389579c30f7ca420d27fc.addTo(map_7b7660bbf626a97e2fc2d21ada24a8cb);
+        
+    
+            var tile_layer_366da2c52845bd4b1d77e6b58b48e9a2 = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Esri",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_366da2c52845bd4b1d77e6b58b48e9a2.addTo(map_7b7660bbf626a97e2fc2d21ada24a8cb);
+        
+    
+            var layer_control_969d0d152238d1b7ef8d01893084bde5_layers = {
+                base_layers : {
+                    "Esri Light Gray" : tile_layer_be58317be7d389579c30f7ca420d27fc,
+                    "Esri Street Map" : tile_layer_366da2c52845bd4b1d77e6b58b48e9a2,
+                },
+                overlays :  {
+                },
+            };
+            let layer_control_969d0d152238d1b7ef8d01893084bde5 = L.control.layers(
+                layer_control_969d0d152238d1b7ef8d01893084bde5_layers.base_layers,
+                layer_control_969d0d152238d1b7ef8d01893084bde5_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_7b7660bbf626a97e2fc2d21ada24a8cb);
+
+        
+    
+            var poly_line_e2edcdc97d809f9e9a45fcfcd657c0b9 = L.polyline(
+                [[35.01579272, 138.48959619], [32.05049937917, 143.305668317], [29.181527480880003, 148.121740444], [26.408877025130003, 152.93781257100002], [23.732548011920002, 157.753884698], [21.15254044125, 162.56995682500002], [18.66885431312, 167.38602895200003], [16.28148962753, 172.20210107899996], [13.990446384480004, 177.01817320600003], [11.795724583969998, 181.83424533299996], [9.697324226000003, 186.65031746000002], [7.695245310569998, 191.46638958699998], [5.789487837679998, 196.282461714], [3.980051807329998, 201.098533841], [2.2669372195199977, 205.914605968], [0.6501440742499991, 210.730678095], [-0.8703276284800001, 215.54675022200001], [-2.2944778886699995, 220.362822349], [-3.62230670632, 225.17889447599998], [-4.85381408143, 229.994966603], [-5.989000013999999, 234.81103873], [-7.02786450403, 239.627110857], [-7.970407551519999, 244.44318298399998], [-8.816629156470002, 249.25925511100002], [-9.566529318880002, 254.07532723800006], [-10.22010803875, 258.89139936500004], [-10.777365316080001, 263.707471492], [-11.23830115087, 268.523543619], [-11.602915543120002, 273.339615746], [-11.87120849283, 278.15568787300003], [-12.04318, 282.97176], [-10.769463529066666, 282.53688077333334], [-9.4870494736, 282.1020015466667], [-8.1959378336, 281.66712232000003], [-6.896128609066668, 281.2322430933334], [-5.587621800000001, 280.79736386666673], [-4.270417406400001, 280.36248464000005], [-2.9445154282666675, 279.92760541333337], [-1.6099158656000028, 279.49272618666674], [-0.2666187184000002, 279.05784696], [1.0853760133333314, 278.6229677333334], [2.446068329599998, 278.18808850666665], [3.8154582304, 277.75320928], [5.193545715733334, 277.31833005333334], [6.580330785599999, 276.88345082666666], [7.97581344, 276.44857160000004], [9.379993678933332, 276.01369237333336], [10.792871502399997, 275.5788131466667], [12.2144469104, 275.14393392], [13.644719902933332, 274.70905469333337], [15.083690479999998, 274.2741754666667], [16.531358641599997, 273.83929624], [17.98772438773333, 273.4044170133334], [19.452787718400003, 272.9695377866667], [20.926548633600007, 272.53465856], [22.409007133333336, 272.09977933333334], [23.900163217600003, 271.66490010666666], [25.4000168864, 271.23002088], [26.908568139733337, 270.7951416533333], [28.4258169776, 270.3602624266666], [29.9517634, 269.9253832], [29.894214109133333, 269.74888688666664], [29.840194744533335, 269.5723905733333], [29.789705306200002, 269.39589426000003], [29.742745794133338, 269.21939794666673], [29.699316208333336, 269.0429016333334], [29.659416548800007, 268.86640532000007], [29.623046815533336, 268.68990900666665], [29.590207008533337, 268.5134126933334], [29.5608971278, 268.33691638], [29.53511717333334, 268.1604200666667], [29.51286714513333, 267.98392375333333], [29.4941470432, 267.80742744], [29.478956867533334, 267.63093112666667], [29.467296618133332, 267.4544348133333], [29.459166295000003, 267.2779385], [29.45456589813334, 267.10144218666665], [29.453495427533337, 266.92494587333334], [29.455954883200004, 266.74844956000004], [29.461944265133333, 266.5719532466667], [29.471463573333338, 266.3954569333333], [29.4845128078, 266.21896062], [29.501091968533334, 266.0424643066667], [29.521201055533336, 265.86596799333336], [29.544840068800006, 265.68947168], [29.572009008333335, 265.5129753666667], [29.602707874133337, 265.33647905333333], [29.636936666200004, 265.15998274000003], [29.674695384533337, 264.9834864266667], [29.715984029133335, 264.8069901133333], [29.7608026, 264.6304938]],
+                {"bubblingMouseEvents": true, "color": "#1f77b4", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#1f77b4", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_7b7660bbf626a97e2fc2d21ada24a8cb);
+        
+    
+            poly_line_e2edcdc97d809f9e9a45fcfcd657c0b9.bindTooltip(
+                `<div>
+                     <b>KATSURO, Paul Shūhei</b><br>Shimizu-shi, Shizuoka Prefecture &rarr; Lima, Peru &rarr; New Orleans, LA &rarr; Houston, TX
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_969a24946c368325e054b7904af0c677 = L.circleMarker(
+                [35.01579272, 138.48959619],
+                {"bubblingMouseEvents": true, "color": "#1f77b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1f77b4", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_7b7660bbf626a97e2fc2d21ada24a8cb);
+        
+    
+            circle_marker_969a24946c368325e054b7904af0c677.bindTooltip(
+                `<div>
+                     Start: Shimizu-shi, Shizuoka Prefecture
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1df540c7e72d657ad0287a63db3201a4 = L.circleMarker(
+                [-12.04318, 282.97176],
+                {"bubblingMouseEvents": true, "color": "#1f77b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1f77b4", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_7b7660bbf626a97e2fc2d21ada24a8cb);
+        
+    
+            circle_marker_1df540c7e72d657ad0287a63db3201a4.bindTooltip(
+                `<div>
+                     Stage 1: Lima, Peru
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b5a03fd990dd38dceb47be0875864b45 = L.circleMarker(
+                [29.9517634, 269.9253832],
+                {"bubblingMouseEvents": true, "color": "#1f77b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1f77b4", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_7b7660bbf626a97e2fc2d21ada24a8cb);
+        
+    
+            circle_marker_b5a03fd990dd38dceb47be0875864b45.bindTooltip(
+                `<div>
+                     Stage 2: New Orleans, LA
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b88f18ea82048e5717c4b7173c43969e = L.circleMarker(
+                [29.7608026, 264.6304938],
+                {"bubblingMouseEvents": true, "color": "#1f77b4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 1.0, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_7b7660bbf626a97e2fc2d21ada24a8cb);
+        
+    
+            circle_marker_b88f18ea82048e5717c4b7173c43969e.bindTooltip(
+                `<div>
+                     End: Houston, TX
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>
